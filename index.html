@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Misión 34</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #5DADE2; /* Azul Gnius */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        .banner {
+            background-color: #85C1E9; /* Azul más claro */
+            color: #333;
+            padding: 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .banner:hover {
+            background-color: #AED6F1;
+        }
+        .banner .title {
+            font-size: 1.3em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 8px;
+            border-top: 1px solid #fff;
+            padding-top: 8px;
+            color: #1A5276; /* Azul oscuro texto */
+        }
+        .content {
+            display: none;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            background-color: #EAF2F8; /* Azul muy claro fondo */
+            border-radius: 5px;
+        }
+        .dialogue {
+            background-color: #FEF9E7; /* Amarillo pálido para diálogo */
+            border: 1px solid #FAD7A0;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 15px 0;
+            text-align: left; /* Cambiado a izquierda para mejor lectura */
+            font-style: italic;
+            color: #784212; /* Marrón oscuro texto */
+            position: relative; /* Para el bocadillo */
+            border-left: 5px solid #F39C12; /* Naranja */
+        }
+
+        .dropdown {
+            margin-bottom: 25px;
+            text-align: center; /* Centrar dropdown */
+        }
+        .dropdown label {
+            font-weight: bold;
+            color: #1A5276;
+        }
+        .dropdown select {
+            font-size: 1.1em;
+            padding: 8px 12px;
+            margin-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #85C1E9;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px;}
+        td { padding: 12px; border: 1px solid #AED6F1; vertical-align: top; }
+        td strong { color: #1A5276; }
+        .level-title { /* Clase específica para el título del nivel */
+             text-align: center;
+             color: #5DADE2;
+             font-size: 1.4em;
+             margin-bottom: 20px;
+        }
+        /* Clases para ocultar/mostrar contenido por nivel */
+        .k1-content, .k2-content, .k3-content { display: none; }
+         .activity.active .banner {
+             background-color: #AED6F1; /* Slightly different color when active */
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Playbook - Misión 34: ¡La Rutina Diaria del Coding Express!</h1>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1 (3 años)</option>
+                <option value="K2">K2 (4 años)</option>
+                <option value="K3">K3 (5 años)</option>
+            </select>
+        </div>
+
+        <h2 id="selected-level" class="level-title">Nivel: K1 (3 años)</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0: Revisión de Materiales -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales</div>
+        <div class="subtitle">Objetivo: Asegurarse de que todos los materiales necesarios para la clase estén disponibles y preparados antes de que lleguen los niños.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Revisa que tengas listos los materiales indicados en la **DIAPOSITIVA 1**: 1 Set LEGO Coding Express (tren, vías rectas, vías curvas, ladrillos de acción rojo, amarillo, azul, blanco, verde - o 5 colores distintos) y 10 iBricks por cada pareja. Papel y colores/crayones.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1: Bienvenida e Introducción -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: ¿Qué Hacemos Cada Día? ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Objetivo: Introducir el concepto de rutinas diarias y su secuencia.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 2** “Bienvenida”. Saluda al CODE SQUAD y pregunta qué hacen ellos todos los días (despertar, comer, jugar, dormir).</td>
+                <td>
+                    <div class="dialogue">
+                        "¡Hola, organizados miembros del CODE SQUAD! ¿Saben qué es una rutina? ¡Son las cosas que hacemos todos los días, casi siempre en el mismo orden! Por ejemplo, ¿qué hacen cuando se despiertan? (Desayunar, lavarse los dientes...). ¿Y antes de dormir? ¡Todos tenemos rutinas!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 3** "Gimnasio CODE SQUAD". Explica que las rutinas son secuencias de pasos y que hoy crearán una para el tren.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Una rutina es como un plan secreto, una secuencia de pasos que seguimos! ¡Para planear una buena rutina, nuestro cerebro necesita estar súper ordenado! ¡Vamos al Gimnasio Cerebral a practicar cómo poner las cosas en orden, porque hoy... ¡vamos a crear la rutina diaria secreta de nuestro Coding Express!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2: Baile de Algoritmos -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-algoritmos')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Objetivo: Practicar seguir una secuencia ordenada de acciones.</div>
+    </div>
+    <div id="baile-algoritmos" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 4** “Baile de Algoritmos”. Guía el baile, enfatizando el orden: "Primero esto, luego esto...".</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡A bailar la rutina! ¡Este baile nos enseña a seguir los pasos en orden! ¡Como cuando nos preparamos por la mañana! ¡Un paso, luego el siguiente! ¡Sigan la música y la secuencia! ¡Así practicamos para planear la rutina del tren!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3: Planteamiento del Problema - ¡La Rutina del Tren Trabajador! -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">⏰ Actividad 3: ¡Organizando el Día del Coding Express! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Presentar la necesidad de una rutina para el tren, definir las posibles acciones/pasos con ladrillos y el reto de secuenciarlos.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 5**. Explica que el Coding Express trabaja mucho y necesita una rutina para ser eficiente y descansar.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡CODE SQUAD! Nuestro Coding Express es un tren muy trabajador, ¿verdad? ¡Nos ayuda en todas las misiones! Pero para trabajar tan bien, ¡necesita tener un día organizado, una rutina! ¡Así sabe qué hacer primero, qué hacer después, y cuándo es hora de descansar para tener energía!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 6**. Define las acciones de la rutina usando ladrillos (Ej: Amarillo=Despertar/Sonar, Blanco=Revisar Ruedas/Luz, Azul=Ir a Cargar/Reversa, Rojo=Dormir/Parar). El reto es planificar y ordenar estos pasos.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Vamos a ayudar al Coding Express a planear su día! ¡Estos ladrillos mágicos serán los pasos de su rutina! Por ejemplo: AMARILLO puede ser '¡Despierta, tren!' (hace sonido). BLANCO puede ser '¡Revisa tus ruedas!' (enciende luz). AZUL puede ser '¡Ve a la estación de carga!' (va en reversa). Y ROJO puede ser '¡Hora de dormir!' (se para). Nuestro reto es: ¡decidir en qué orden debe hacer estas cosas nuestro tren! ¡Crearemos su rutina diaria secreta! Primero la dibujaremos en papel, ¡y luego la construiremos!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4: Formación de Parejas -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: ¡Planificadores de Rutinas! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Formar parejas para colaborar en el diseño y programación de la rutina del tren.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 7** “Formación de Equipos”. Explica que planificar una rutina requiere pensar juntos y tomar decisiones. Forma las parejas.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Planear una rutina perfecta necesita de grandes organizadores! ¡Y dos organizadores pensando juntos pueden crear la mejor rutina del mundo! ¡Vamos a formar nuestros Equipos de Planificadores de Rutinas para ayudar al Coding Express! ¡Encuentren a su compañero de planificación!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos tengan pareja. Anímales a discutir qué pasos incluirán en la rutina y en qué orden.</td>
+                <td>
+                     <div class="dialogue">
+                        "¿Listos, Planificadores? ¡Excelente! Hablen con su pareja: ¿Qué hará primero el tren? ¿Despertar? ¿Ir a trabajar? ¿Cuándo descansará? ¡Decidan juntos los pasos de la rutina y prepárense para dibujarla!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5: Reto de Codificación - ¡Diseña y Construye la Rutina! -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('reto-codificacion')">
+        <div class="title">📝 Actividad 5: ¡Del Papel a las Vías! ⏰ Tiempo: 7 minutos</div>
+        <div class="subtitle">Objetivo: Planificar la secuencia de la rutina en papel y luego construir la vía y colocar los ladrillos de acción correspondientes.</div>
+    </div>
+    <div id="reto-codificacion" class="content">
+        <table>
+             <!-- Paso 1: Planificación en Papel -->
+             <tr>
+                <td><strong>PASO 1 (3 minutos):</strong> Reproduce la **DIAPOSITIVA 8** "¡Dibuja la Rutina Secreta!". Entrega papel y colores. Pide que dibujen en orden los ladrillos/acciones de la rutina (según el número de pasos de su nivel).</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Planificadores, a sus mesas de diseño! Tomen papel y colores. ¡Dibujen la secuencia de la rutina de su tren! ¿Qué ladrillo/acción va primero? ¿Y después? ¡Dibujen los ladrillos en el orden exacto que quieren que el tren siga! ¡Este será su plan maestro de la rutina!"
+                    </div>
+                </td>
+            </tr>
+            <!-- Paso 2: Construcción (Específico por Nivel) -->
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 2 - K1 (4 minutos):</strong> Reproduce la **DIAPOSITIVA 9** "Rutina K1: ¡Día Simple (4 Pasos)!". Rutina de 4 pasos (ej: Sonar-Avanzar(sin ladrillo)-Luz-Parar). Construir vía recta (4 tramos). Colocar 3 ladrillos (Amarillo, Blanco, Rojo) según su plan. Usar iBricks para marcar "Casa" y "Trabajo".</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! ¡Su rutina tiene 4 pasos! Miren su dibujo. Ahora, construyan una vía recta con 4 tramos. Usen bloques para marcar la 'Casa' al inicio y el 'Trabajo' al final. Coloquen los 3 ladrillos de acción (como Amarillo para despertar, Blanco para prepararse, Rojo para descansar) en las vías según su plan. ¡Vamos a darle vida a la rutina!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 2 - K2 (4 minutos):</strong> Reproduce la **DIAPOSITIVA 10** "Rutina K2: ¡Día con Curva (5 Pasos)!". Rutina de 5 pasos (ej: Sonar-Luz-Avanzar(curva)-Reversa-Parar). Construir vía con 1 curva. Colocar 4 ladrillos según su plan. Marcar "Casa" y "Estación de Carga" con iBricks.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Planificadores K2! ¡Su rutina tiene 5 pasos e incluye una curva! Miren su plan. Construyan la vía (quizás recta-curva-recta...). Marquen la 'Casa' y la 'Estación de Carga' con bloques. Ahora, coloquen los 4 ladrillos de acción (ej: Amarillo-despertar, Blanco-revisar, Azul-cargar, Rojo-dormir) en el orden correcto según su dibujo. ¡A construir esa rutina!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 2 - K3 (4 minutos):</strong> Reproduce la **DIAPOSITIVA 11** "Rutina K3: ¡Día Completo (6 Pasos)!". Rutina de 6 pasos (ej: Sonar-Luz-Avanzar-Azul(acción)-Verde(acción)-Rojo). Construir vía con curva o desvío simple como parte del camino. Colocar 5 ladrillos según su plan. Marcar "Casa", "Trabajo", "Parque" con iBricks.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Expertos K3! ¡Su rutina es de un día completo con 6 pasos! ¡Puede tener curvas o hasta un desvío para ir a diferentes lugares! Miren su plan. Construyan la vía. Marquen la 'Casa', el 'Trabajo' y quizás el 'Parque' con bloques. Coloquen los 5 ladrillos de acción (¡pueden usar el Verde para algo nuevo!) en la secuencia exacta que diseñaron. ¡Vamos a crear el día perfecto para el Coding Express!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6: ¡La Rutina en Acción! -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('probando-rutina')">
+        <div class="title">▶️ Actividad 6: ¡Observando la Rutina Diaria! ⏰ Tiempo: 7 minutos</div>
+        <div class="subtitle">Objetivo: Ejecutar la rutina programada y verificar si el tren sigue la secuencia de acciones planificada de principio a fin.</div>
+    </div>
+    <div id="probando-rutina" class="content">
+        <table>
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 1 - K1 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 12** "¡Rutina K1 en Marcha!". Guía para poner el tren en "Casa" y empujarlo. Observar si realiza los 4 pasos (3 acciones + movimiento) en orden hasta "Trabajo" o hasta parar.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! ¡Pongan al Coding Express en su 'Casa'! ¡Denle un empujoncito para que empiece su día! ¡Miren! ¿Hizo la primera acción? ¿Avanzó? ¿La segunda? ¿Y la parada final? ¡Siguió los 4 pasos de su rutina! ¡Buen trabajo!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 1 - K2 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 13** "¡Rutina K2 Funcionando!". Guía para probar el tren. Observar si realiza los 5 pasos/acciones en orden, incluyendo la curva, hasta la "Estación de Carga" o la parada final.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Planificadores K2! ¡Es hora de ver la rutina! Tren en 'Casa'... ¡y acción! ¿Primer paso? ¿Segundo? ¿Tomó la curva? ¿Tercero? ¿Cuarto (Reversa)? ¿Y el quinto (Parada)? ¡Contemos los 5 pasos! ¡Lo lograron! ¡Una rutina perfecta con curva!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 1 - K3 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 14** "¡Rutina K3 Completa!". Guía para probar el tren. Observar si realiza los 6 pasos/acciones en orden, pasando por la vía compleja, hasta el destino final.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Expertos K3! ¡Veamos su día completo! Tren en 'Casa'... ¡a empezar la rutina! ¡Observen cada paso! Uno... dos... tres... cuatro... cinco... ¡y seis! ¿Hizo todas las acciones en orden, pasando por la vía especial? ¡Fantástico! ¡Han programado una rutina compleja con éxito!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7 OMITIDA -->
+
+<!-- Actividad 8: Conclusión y Reflexión -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion-reflexion')">
+        <div class="title">🏁 Actividad 8: ¡Un Tren Bien Organizado! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Celebrar la creación de rutinas, reforzar la importancia de la secuencia y la abstracción (ladrillos = acciones).</div>
+    </div>
+    <div id="conclusion-reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 15** "¡Misión Cumplida!". Reúne al grupo, felicita por crear las rutinas. Realiza preguntas sobre el proceso.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡MISIÓN CUMPLIDA, planificadores estrella del CODE SQUAD! ¡Han creado rutinas diarias fantásticas para nuestro Coding Express! ¡Ahora su día estará súper organizado! ¡Gracias a ustedes! Pensemos en lo que hicimos:
+1. ¿Por qué era importante planear la rutina en papel primero? (¡Para saber el orden!)
+2. ¿Qué usamos para representar cada paso de la rutina en la vía? (¡Los ladrillos de acción de colores!)
+3. ¿Importaba el orden en que pusimos los ladrillos? (¡Sí, mucho! ¡Era la secuencia de la rutina!)
+¡Hoy aprendimos que podemos planear una serie de pasos (una rutina) y luego usar códigos (nuestros ladrillos) para que nuestro tren la siga! ¡Es como darle un horario! ¡Son geniales organizando y secuenciando! ¡Hasta la próxima misión!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+        <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        var parentActivity = content.closest('.activity'); // Encuentra el contenedor de la actividad
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            parentActivity.classList.remove('active'); // Remueve clase activa si se cierra
+        } else {
+             // Opcional: Cierra otros contenidos abiertos antes de abrir uno nuevo
+             // closeAllContents();
+            content.style.display = "block";
+            parentActivity.classList.add('active'); // Añade clase activa si se abre
+        }
+    }
+
+    // Función opcional para cerrar todos los demás contenidos al abrir uno
+    /*
+    function closeAllContents() {
+        var allContents = document.querySelectorAll('.content');
+        var allActivities = document.querySelectorAll('.activity');
+        allContents.forEach(function(content) {
+            content.style.display = 'none';
+        });
+         allActivities.forEach(function(activity) {
+             activity.classList.remove('active');
+         });
+    }
+    */
+
+    function updateContent() {
+        var level = document.getElementById("class-level").value;
+        // Actualiza el texto del título H2
+        var levelText = document.getElementById("class-level").options[document.getElementById("class-level").selectedIndex].text;
+        document.getElementById("selected-level").innerText = "Nivel: " + levelText;
+
+        // Oculta todas las filas de contenido específico de nivel primero
+        var k1Contents = document.querySelectorAll('.k1-content');
+        var k2Contents = document.querySelectorAll('.k2-content');
+        var k3Contents = document.querySelectorAll('.k3-content');
+
+        k1Contents.forEach(function(el) { el.style.display = 'none'; });
+        k2Contents.forEach(function(el) { el.style.display = 'none'; });
+        k3Contents.forEach(function(el) { el.style.display = 'none'; });
+
+        // Muestra solo las filas del nivel seleccionado
+        // Usamos 'table-row' porque estamos mostrando/ocultando filas de tabla (<tr>)
+        var selectedContents = document.querySelectorAll('.' + level.toLowerCase() + '-content');
+        selectedContents.forEach(function(el) {
+             // Importante: Necesitamos asegurarnos de que el display sea correcto para filas de tabla
+             if (el.tagName === 'TR') {
+                 el.style.display = 'table-row';
+             } else {
+                 // Si por alguna razón hay otros elementos, usar 'block' o ajustar según sea necesario
+                 el.style.display = 'block';
+             }
+        });
+    }
+
+    // Asegura que updateContent se ejecute cuando la página cargue
+    document.addEventListener('DOMContentLoaded', function() {
+        updateContent();
+    });
+</script>
+
+</body>
+</html>
